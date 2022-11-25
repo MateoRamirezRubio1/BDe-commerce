@@ -2,7 +2,7 @@
 
 function conectarDB(): mysqli
 {
-    $db = new mysqli('localhost', 'root', 'Matteiro-784569', 'ecommercemvc');
+    $db = new mysqli('localhost', 'root', 'contraseña', 'ecommercemvc');
 
     if (!$db) {
         echo "Error, no se pudo conectar.";
