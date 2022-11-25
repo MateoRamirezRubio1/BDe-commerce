@@ -93,7 +93,9 @@ class Admin extends ActiveRecord
 
     public function autenticarUsuario()
     {
-        session_start();
+        if (!isset($_SESSION)) {
+            session_start();
+        }
 
         // Llenar el arreglo de la sesión
         $_SESSION['usuario'] = $this->email;
@@ -101,8 +103,6 @@ class Admin extends ActiveRecord
         if ($this->email === 'root@root.com') {
             $_SESSION['admin'] = True;
         }
-
-        header('Location: /');
     }
 
     public function registrarUsuario()
@@ -116,7 +116,7 @@ class Admin extends ActiveRecord
         $resultado = self::$db->query($query);
 
         if ($resultado) {
-            header('Location: /login');
+            header('Location: /public/index.php/login');
         }
     }
 }

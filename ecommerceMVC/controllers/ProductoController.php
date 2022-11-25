@@ -32,6 +32,7 @@ class ProductoController
 
             if (empty($errores)) {
                 $producto->guardar();
+                header('Location: /public/index.php/admin?resultado=1');
             }
         }
 
@@ -44,7 +45,7 @@ class ProductoController
 
     public static function actualizar(Router $router)
     {
-        $id = validarRedireccionar('/admin');
+        $id = validarRedireccionar('/public/index.php/admin');
 
         // Obtener datos del producto
         $producto = Producto::buscar($id);
@@ -61,6 +62,7 @@ class ProductoController
 
             if (empty($errores)) {
                 $producto->guardar();
+                header('Location: /public/index.php/admin?resultado=2');
             }
         }
 
@@ -81,6 +83,8 @@ class ProductoController
                 $producto = Producto::buscar($id);
                 // Eliminar producto
                 $producto->eliminar();
+
+                header('Location: /public/index.php/admin?resultado=3');
             }
         }
     }

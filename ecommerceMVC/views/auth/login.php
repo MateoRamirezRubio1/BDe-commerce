@@ -7,7 +7,7 @@
         </div>
     <?php endforeach ?>
 
-    <form method="POST" action="/login" novalidate>
+    <form method="POST" action="/public/index.php/login" novalidate>
         <fieldset>
             <legend>Email y Password</legend>
 
@@ -22,5 +22,5 @@
     </form>
 
     <p>Si no tienes cuenta</p>
-    <a href="/register">Regitrarse</a>
+    <a href="/public/index.php/register">Regitrarse</a>
 </main>

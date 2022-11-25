@@ -1,7 +1,7 @@
 <main>
     <h1>Actualizar Producto</h1>
 
-    <a href="/admin">Volver</a>
+    <a href="/public/index.php/admin">Volver</a>
 
     <?php foreach ($errores as $error) : ?>
         <div>

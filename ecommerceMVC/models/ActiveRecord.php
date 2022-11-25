@@ -52,15 +52,7 @@ class ActiveRecord
         $query .= join("', '", array_values($atributos));
         $query .= " ')";
 
-        $resultado = self::$db->query($query);
-
-        // Mensaje de exito
-        if ($resultado && static::$tabla === 'product') {
-            header('Location: /admin?resultado=1');
-        }
-        if ($resultado && static::$tabla === 'order_details') {
-            header('Location: /');
-        }
+        self::$db->query($query);
     }
 
     public function actualizar()
@@ -82,14 +74,7 @@ class ActiveRecord
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "'";
         $query .= " LIMIT 1";
 
-        $resultado = self::$db->query($query);
-
-        if ($resultado && static::$tabla === 'product' && $admin) {
-            header('Location: /admin?resultado=1');
-        }
-        if ($resultado && static::$tabla === 'order_details') {
-            header('Location: /');
-        }
+        self::$db->query($query);
     }
 
     // Eliminar registro
@@ -98,16 +83,8 @@ class ActiveRecord
         $query = "DELETE FROM " . static::$tabla;
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "'";
         $query .= " LIMIT 1";
-        echo $query;
 
-        $resultado = self::$db->query($query);
-
-        if ($resultado && static::$tabla === 'product') {
-            header('Location: /admin?resultado=3');
-        }
-        if ($resultado && static::$tabla === 'order_details') {
-            header('Location: /');
-        }
+        self::$db->query($query);
     }
 
     public function iterarAtributos()

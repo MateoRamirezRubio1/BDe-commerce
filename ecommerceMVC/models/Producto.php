@@ -46,10 +46,12 @@ class Producto extends ActiveRecord
 
     public static function aplicarFiltros($filtrados = [], $orden = '')
     {
+        $menor = $filtrados['precio'][0] ?? '';
+        $mayor = $filtrados['precio'][1] ?? '';
         $filtros = [
             "categoria" => " category_id = " . $filtrados['categoria'],
             "buscar" => " name LIKE '%" . $filtrados['buscar'] . "%'",
-            "precio" => " price >= " . intval($filtrados['precio'][0]) . " AND price <= " . intval($filtrados['precio'][1])
+            "precio" => " price >= " . intval($menor) . " AND price <= " . intval($mayor)
         ];
 
         $query = "SELECT * FROM " . self::$tabla;

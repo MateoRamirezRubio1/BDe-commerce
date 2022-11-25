@@ -30,6 +30,7 @@ class LoginController
                     if ($autenticado) {
                         // Autenticar usuario
                         $autenticacion->autenticarUsuario();
+                        header('Location: /public/index.php');
                     }
                     if (!$autenticado) {
                         $errores = Admin::getErrores();
@@ -43,13 +44,15 @@ class LoginController
         ]);
     }
 
-    public static function logout(Router $router)
+    public static function logout()
     {
-        session_start();
+        if (!isset($_SESSION)) {
+            session_start();
+        }
 
         $_SESSION = [];
 
-        header('Location: /');
+        header('Location: /public/index.php');
     }
 
     public static function register(Router $router)

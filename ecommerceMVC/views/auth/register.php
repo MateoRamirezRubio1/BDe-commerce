@@ -7,7 +7,7 @@
         </div>
     <?php endforeach ?>
 
-    <form method="POST" action="/register">
+    <form method="POST" action="/public/index.php/register">
         <fieldset>
             <legend>Información Personal</legend>
 

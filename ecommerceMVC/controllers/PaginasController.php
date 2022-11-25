@@ -17,7 +17,7 @@ class PaginasController
         $idCategoria = $_GET['categoria'] ?? '';
         $nombreCategoria = $_GET['nombre'] ?? '';
         $precioMin = $_GET['precioMinimo'] ?? 0;
-        $precioMax = $_GET['precioMaximo'] ?? 99999 * 99999;
+        $precioMax = $_GET['precioMaximo'] ?? 9999 * 9999;
         $buscarNombre = $_GET['buscar'] ?? '';
 
         $filtros = [
@@ -26,7 +26,7 @@ class PaginasController
             "buscar" => $buscarNombre,
         ];
 
-        $orden = $_GET['orden'];
+        $orden = $_GET['orden'] ?? null;
 
         $productosCategoria = Producto::aplicarFiltros($filtros, $orden);
 

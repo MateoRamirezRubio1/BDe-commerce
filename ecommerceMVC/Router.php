@@ -19,7 +19,9 @@ class Router
 
     public function comprobarRutas()
     {
-        session_start();
+        if (!isset($_SESSION)) {
+            session_start();
+        }
 
         $autenticado = $_SESSION['admin'] ?? False;
 
@@ -39,7 +41,7 @@ class Router
 
         // Proteger rutas si un usuario no admin está ingresando
         if (in_array($urlActual, $rutasProtegidas) && !$autenticado) {
-            header('Location: /');
+            header('Location: /public/index.php');
         }
 
         if ($funcion) {

@@ -3,7 +3,7 @@
         <div>
             <h3>Filtros</h3>
 
-            <form action="/" method="GET">
+            <form action="/public/index.php" method="GET">
                 <label for="">Buscar por nombre</label>
                 <input type="text" placeholder="El: Martillo" name="buscar">
 
@@ -27,7 +27,7 @@
 
             <nav>
                 <?php foreach ($categorias as $categoria) : ?>
-                    <a href="/?nombre=<?php echo $categoria->name ?>&categoria=<?php echo $categoria->id ?>"><?php echo $categoria->name; ?></a>
+                    <a href="/public/index.php/?nombre=<?php echo $categoria->name ?>&categoria=<?php echo $categoria->id ?>"><?php echo $categoria->name; ?></a>
                 <?php endforeach; ?>
             </nav>
         </div>
@@ -52,10 +52,10 @@
             echo "Precio: " . $producto->price;
             echo "<br>";
         ?>
-            <a href="/producto?producto=<?php echo $producto->id; ?>">Ver Producto</a>
+            <a href="/public/index.php/producto?producto=<?php echo $producto->id; ?>">Ver Producto</a>
 
             <?php if ($producto->stock > 0) : ?>
-                <form action="/carrito" method="POST">
+                <form action="/public/index.php/carrito" method="POST">
                     <input type="hidden" name="product_id" value="<?php echo $producto->id; ?>">
 
                     <label for="cantidad">Cantidad</label>

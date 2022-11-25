@@ -13,7 +13,9 @@ class CarritoController
 {
     public static function carrito(Router $router)
     {
-        session_start();
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         $autenticado = $_SESSION['login'] ?? False;
 
         if ($autenticado) {
@@ -36,13 +38,15 @@ class CarritoController
                 $carrito = new Carrito($_POST);
 
                 $carrito->guardar();
+
+                header('Location: /public/index.php');
             }
 
             $productosCarrito = Carrito::productosCarrito($idUsuario);
             $totalCompra = 0;
         }
         if (!$autenticado) {
-            header('Location: /');
+            header('Location: /public/index.php');
         }
 
         $router->render('/paginas/carrito', [
@@ -67,7 +71,7 @@ class CarritoController
             $productoCarrito->guardar();
         }
 
-        header('Location: /carrito');
+        header('Location: /public/index.php/carrito');
     }
 
     public static function eliminar()
@@ -93,7 +97,7 @@ class CarritoController
             }
         }
 
-        header('Location: /carrito');
+        header('Location: /public/index.php/carrito');
     }
 
     public static function comprar(Router $router)
@@ -113,13 +117,14 @@ class CarritoController
 
             if ($orden) {
                 Carrito::vaciarCarrito($idUsuario);
-                header('Location: /');
+                header('Location: /public/index.php');
             }
         }
 
         $ordenes = Compra::allCompras($idUsuario);
         $view = '/paginas/compras';
-        if ($_GET['us'] === 'adm') {
+        $us = $_GET['us'] ?? null;
+        if ($us === 'adm') {
             $ordenes = Compra::comprasClientes();
             $view = '/paginas/historialClientes';
         }
