@@ -9,9 +9,9 @@
     <h3>Descripción</h3>
     <p><?php echo $producto->description; ?></p>
 
-    <a href="/public/index.php">Mirar más productos</a>
+    <a href="/BDe-commerce/ecommerceMVC/public/index.php">Mirar más productos</a>
     <?php if ($producto->stock > 0) : ?>
-        <form action="/public/index.php/carrito" method="POST">
+        <form action="/BDe-commerce/ecommerceMVC/public/index.php/carrito" method="POST">
             <input type="hidden" name="product_id" value="<?php echo $producto->id; ?>">
 
             <label for="cantidad">Cantidad</label>

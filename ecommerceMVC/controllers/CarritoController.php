@@ -39,14 +39,14 @@ class CarritoController
 
                 $carrito->guardar();
 
-                header('Location: /public/index.php');
+                header('Location: /BDe-commerce/ecommerceMVC/public/index.php');
             }
 
             $productosCarrito = Carrito::productosCarrito($idUsuario);
             $totalCompra = 0;
         }
         if (!$autenticado) {
-            header('Location: /public/index.php');
+            header('Location: /BDe-commerce/ecommerceMVC/public/index.php');
         }
 
         $router->render('/paginas/carrito', [
@@ -71,7 +71,7 @@ class CarritoController
             $productoCarrito->guardar();
         }
 
-        header('Location: /public/index.php/carrito');
+        header('Location: /BDe-commerce/ecommerceMVC/public/index.php/carrito');
     }
 
     public static function eliminar()
@@ -97,7 +97,7 @@ class CarritoController
             }
         }
 
-        header('Location: /public/index.php/carrito');
+        header('Location: /BDe-commerce/ecommerceMVC/public/index.php/carrito');
     }
 
     public static function comprar(Router $router)
@@ -117,7 +117,7 @@ class CarritoController
 
             if ($orden) {
                 Carrito::vaciarCarrito($idUsuario);
-                header('Location: /public/index.php');
+                header('Location: /BDe-commerce/ecommerceMVC/public/index.php');
             }
         }
 

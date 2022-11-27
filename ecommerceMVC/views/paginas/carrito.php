@@ -24,7 +24,7 @@
 
                     <?php if ($idEditar !== $producto->id) : ?>
                         <td>
-                            <form method="POST" action="/public/index.php/carrito/eliminar">
+                            <form method="POST" action="/BDe-commerce/ecommerceMVC/public/index.php/carrito/eliminar">
 
                                 <input type="hidden" name="quantity" value="<?php echo $producto->quantity; ?>">
                                 <input type="hidden" name="product_id" value="<?php echo $producto->product_id; ?>">
@@ -32,13 +32,13 @@
                                 <input type="hidden" name="id" value="<?php echo $producto->id; ?>">
                                 <input type="submit" value="Borrar">
                             </form>
-                            <a href="/public/index.php/carrito?id=<?php echo $producto->id; ?>">Editar</a>
+                            <a href="/BDe-commerce/ecommerceMVC/public/index.php/carrito?id=<?php echo $producto->id; ?>">Editar</a>
                         </td>
                     <?php endif; ?>
 
                     <?php if ($idEditar && $idEditar === $producto->id) : ?>
                         <td>
-                            <form method="POST" action="/public/index.php/carrito/actualizar">
+                            <form method="POST" action="/BDe-commerce/ecommerceMVC/public/index.php/carrito/actualizar">
                                 <input type="hidden" name="carrito[id]" value="<?php echo $_GET['id']; ?>">
 
                                 <label for="cantidad">Nueva cantidad</label>
@@ -62,7 +62,7 @@
         <br>
         <h3>Detalles finales pedido</h3>
 
-        <form action="/public/index.php/carrito/compras" method="POST">
+        <form action="/BDe-commerce/ecommerceMVC/public/index.php/carrito/compras" method="POST">
             <fieldset>
                 <legend>Información del Pedido</legend>
 

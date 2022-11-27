@@ -22,5 +22,5 @@
     </form>
 
     <p>Si no tienes cuenta</p>
-    <a href="/public/index.php/register">Regitrarse</a>
+    <a href="/BDe-commerce/ecommerceMVC/public/index.php/register">Regitrarse</a>
 </main>

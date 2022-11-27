@@ -1,7 +1,7 @@
 <main>
     <h1>Crear Nuevo Producto</h1>
 
-    <a href="/public/index.php/admin">Volver</a>
+    <a href="/BDe-commerce/ecommerceMVC/public/index.php/admin">Volver</a>
 
     <?php foreach ($errores as $error) : ?>
         <div>

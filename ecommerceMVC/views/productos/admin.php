@@ -8,7 +8,7 @@
         <p> Producto Eliminado Correctamente</p>
     <?php endif; ?>
 
-    <a href="/public/index.php/productos/crear">Nuevo Producto</a>
+    <a href="/BDe-commerce/ecommerceMVC/public/index.php/productos/crear">Nuevo Producto</a>
 
     <table>
         <thead>
@@ -29,11 +29,11 @@
                     <td><?php echo $producto->name; ?></td>
                     <td><?php echo $producto->price; ?></td>
                     <td>
-                        <form method="POST" action="/public/index.php/productos/eliminar">
+                        <form method="POST" action="/BDe-commerce/ecommerceMVC/public/index.php/productos/eliminar">
                             <input type="hidden" name="id" value="<?php echo $producto->id; ?>">
                             <input type="submit" value="Eliminar">
                         </form>
-                        <a href="/public/index.php/productos/actualizar?id=<?php echo $producto->id; ?>">Actualizar</a>
+                        <a href="/BDe-commerce/ecommerceMVC/public/index.php/productos/actualizar?id=<?php echo $producto->id; ?>">Actualizar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

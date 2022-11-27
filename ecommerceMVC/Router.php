@@ -41,7 +41,7 @@ class Router
 
         // Proteger rutas si un usuario no admin está ingresando
         if (in_array($urlActual, $rutasProtegidas) && !$autenticado) {
-            header('Location: /public/index.php');
+            header('Location: /BDe-commerce/ecommerceMVC/public/index.php');
         }
 
         if ($funcion) {

@@ -116,7 +116,7 @@ class Admin extends ActiveRecord
         $resultado = self::$db->query($query);
 
         if ($resultado) {
-            header('Location: /public/index.php/login');
+            header('Location: /BDe-commerce/ecommerceMVC/public/index.php/login');
         }
     }
 }

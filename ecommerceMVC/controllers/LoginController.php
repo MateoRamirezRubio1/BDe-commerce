@@ -30,7 +30,7 @@ class LoginController
                     if ($autenticado) {
                         // Autenticar usuario
                         $autenticacion->autenticarUsuario();
-                        header('Location: /public/index.php');
+                        header('Location: /BDe-commerce/ecommerceMVC/public/index.php');
                     }
                     if (!$autenticado) {
                         $errores = Admin::getErrores();
@@ -52,7 +52,7 @@ class LoginController
 
         $_SESSION = [];
 
-        header('Location: /public/index.php');
+        header('Location: /BDe-commerce/ecommerceMVC/public/index.php');
     }
 
     public static function register(Router $router)

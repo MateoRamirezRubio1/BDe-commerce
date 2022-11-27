@@ -20,7 +20,7 @@ $sesionIniciadaAdmin = $_SESSION['admin'] ?? false;
 <body>
     <header>
         <div>
-            <a href="/public/index.php/?categoria=-1">
+            <a href="/BDe-commerce/ecommerceMVC/public/index.php/?categoria=-1">
                 <h1>E-Commerce</h1>
             </a>
 
@@ -30,23 +30,23 @@ $sesionIniciadaAdmin = $_SESSION['admin'] ?? false;
             ?>
 
             <nav>
-                <a href="/public/index.php/login">Iniciar Sesión</a>
+                <a href="/BDe-commerce/ecommerceMVC/public/index.php/login">Iniciar Sesión</a>
                 <?php if ($sesionIniciada) : ?>
-                    <a href="/public/index.php/logout">Cerrar Sesión</a>
+                    <a href="/BDe-commerce/ecommerceMVC/public/index.php/logout">Cerrar Sesión</a>
                     <?php if ($sesionIniciadaAdmin) : ?>
                         <br>
                         <br>
-                        <a href="/public/index.php/admin">Administrar E-Commerce</a>
+                        <a href="/BDe-commerce/ecommerceMVC/public/index.php/admin">Administrar E-Commerce</a>
                         <br>
-                        <a href="/public/index.php/clientes/compras?us=adm">Historial compras de clientes</a>
+                        <a href="/BDe-commerce/ecommerceMVC/public/index.php/clientes/compras?us=adm">Historial compras de clientes</a>
                     <?php endif; ?>
                     <br>
                     <br>
-                    <a href="/public/index.php/carrito/compras">Historial de compras</a>
+                    <a href="/BDe-commerce/ecommerceMVC/public/index.php/carrito/compras">Historial de compras</a>
                 <?php endif; ?>
                 <br>
                 <br>
-                <a href="/public/index.php/carrito">Carrito de compras</a>
+                <a href="/BDe-commerce/ecommerceMVC/public/index.php/carrito">Carrito de compras</a>
                 <?php if (!$sesionIniciada) {
                     echo "Debes iniciar sesión para agregar productos al carrito.";
                 } ?>

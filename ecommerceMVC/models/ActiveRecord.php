@@ -169,7 +169,7 @@ class ActiveRecord
 
     public static function idUsuario()
     {
-        $email = sanitizar($_SESSION['usuario']);
+        $email = sanitizar($_SESSION['usuario']) ?? '';
 
         $query = "SELECT id FROM customer WHERE email = '${email}'";
 
