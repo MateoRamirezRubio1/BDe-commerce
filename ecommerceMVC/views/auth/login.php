@@ -7,7 +7,7 @@
         </div>
     <?php endforeach ?>
 
-    <form method="POST" action="/BDe-commerce/ecommerceMVC/public/index.php/login/public/index.php/login" novalidate>
+    <form method="POST" action="/BDe-commerce/ecommerceMVC/public/index.php/login" novalidate>
         <fieldset>
             <legend>Email y Password</legend>
 
